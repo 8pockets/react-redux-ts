@@ -1,4 +1,5 @@
 export enum AppEvents {
-  SET_NAME = "APP/SET_NAME",
-  SET_AGE = "APP/SET_AGE"
+  SET_NAME = 'APP/SET_NAME',
+  SET_AGE = 'APP/SET_AGE',
+  SET_TASK = 'APP/SET_TASK',
 }

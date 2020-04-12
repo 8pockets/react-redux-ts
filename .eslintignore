@@ -1,0 +1,12 @@
+# Exclude outer repositories
+submodules/
+
+# Exclude auto-generated directories
+node_modules/
+coverage/
+webroot*/
+storybook-static/
+src/types/gen
+
+# Include JS files beginning with a period
+!.*.js

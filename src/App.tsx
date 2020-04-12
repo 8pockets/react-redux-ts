@@ -1,13 +1,28 @@
-import React from "react";
+import React from 'react';
 
-interface IProps {
+interface Props {
   age: number;
+  tasks: number[];
   onClick(): void;
+  addTask(): void;
 }
 
-export const App: React.FunctionComponent<IProps> = ({ age, onClick }) => (
+const clickMe = 'Click me';
+const addTitle = 'Add tasks';
+
+export const App: React.FunctionComponent<Props> = ({ age, tasks, onClick, addTask }) => (
   <div>
     <h1>Age: {age}</h1>
-    <button onClick={onClick}>Click me</button>
+    <button type="submit" onClick={onClick}>
+      {clickMe}
+    </button>
+    <ul>
+      {tasks.map((task) => {
+        return <li key={task}>{task}</li>;
+      })}
+    </ul>
+    <button type="submit" onClick={addTask}>
+      {addTitle}
+    </button>
   </div>
 );

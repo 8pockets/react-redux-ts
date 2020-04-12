@@ -1,16 +1,15 @@
-import { AppEvents } from "./events";
+import { AppEvents } from './events';
 
 const makeAction = <T extends AppEvents, P>(type: T) => (payload: P) => {
   return {
     type,
-    payload
+    payload,
   };
 };
 
-export const SetName = makeAction<AppEvents.SET_NAME, string>(
-  AppEvents.SET_NAME
-);
+export const SetName = makeAction<AppEvents.SET_NAME, string>(AppEvents.SET_NAME);
 export const SetAge = makeAction<AppEvents.SET_AGE, number>(AppEvents.SET_AGE);
+export const SetTask = makeAction<AppEvents.SET_TASK, number>(AppEvents.SET_TASK);
 
 interface IStringMap<T> {
   [key: string]: T;
@@ -20,7 +19,8 @@ type IActionUnion<A extends IStringMap<IAnyFunction>> = ReturnType<A[keyof A]>;
 
 const actions = {
   SetName,
-  SetAge
+  SetAge,
+  SetTask,
 };
 
 export type IAction = IActionUnion<typeof actions>;
