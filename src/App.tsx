@@ -17,9 +17,9 @@ export const App: React.FunctionComponent<Props> = ({ age, tasks, onClick, addTa
       {clickMe}
     </button>
     <ul>
-      {tasks.map((task) => {
-        return <li key={task}>{task}</li>;
-      })}
+      {tasks.map((task, index) => (
+        <li key={index}>{task}</li>
+      ))}
     </ul>
     <button type="submit" onClick={addTask}>
       {addTitle}
