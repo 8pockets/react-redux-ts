@@ -22,9 +22,8 @@ export const reducer = (state: IState = initState, action: IAction): IState => {
       return { ...state, age: action.payload };
 
     case AppEvents.SET_TASK:
-      const t = state.tasks;
-      t.push(action.payload);
-      return { ...state, tasks: t };
+      state.tasks.push(action.payload);
+      return { ...state, tasks: state.tasks };
 
     default:
       return state;
